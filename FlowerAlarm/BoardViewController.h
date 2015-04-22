@@ -13,5 +13,5 @@
 
 @interface BoardViewController : UIViewController
 @property (strong, nonatomic) DevicesController *devicesController;
-
+@property (nonatomic, assign)BOOL setupImage;
 @end

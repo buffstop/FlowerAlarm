@@ -8,10 +8,11 @@
 
 #import "BoardViewController.h"
 
-
+NSString *const kImageFilename = @"myFlower.png";
 
 @interface BoardViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *flowerImageView;
+@property (nonatomic, strong)UIImage* storedImage;
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.setupImage = YES;
     __weak __typeof(&*self)weakSelf = self;
     [self.devicesController setBluetoothStateChanged:^(BOOL enabled) {
         [weakSelf restoreDevice];
@@ -38,23 +40,52 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (self.flowerImageView.image == nil) {
-        [self performSegueWithIdentifier:@"selectFlower" sender:self];
-    }
+    [self prepareImageIfNeeded];
 }
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:PreferredDeviceFoundNotification object:nil];
-
+    
 }
 #pragma mark -
 
--(void)didRetreivePreferredDevice:(NSNotification*)notification
+- (void)prepareImageIfNeeded
 {
-
+    if (self.setupImage) {
+        [self restoreImage];
+        
+        if (self.storedImage) {
+            self.flowerImageView.image = self.storedImage;
+        }else {
+            [self performSegueWithIdentifier:@"selectFlower" sender:self];
+        }
+        self.setupImage = NO;
+    }
 }
 
+-(void)didRetreivePreferredDevice:(NSNotification*)notification
+{
+    
+}
+
+- (void)restoreImage
+{
+    self.storedImage = [NSKeyedUnarchiver unarchiveObjectWithFile:[self imagePath]];
+}
+
+- (void)saveImage:(UIImage*)image
+{
+    if ([NSKeyedArchiver archiveRootObject:image toFile:[self imagePath]]) {
+        self.storedImage = image;
+    }
+}
+
+- (NSString*)imagePath
+{
+    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    return [documentsPath stringByAppendingPathComponent:kImageFilename];
+}
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -73,8 +104,9 @@
     UIImage* selectedImage = info[UIImagePickerControllerOriginalImage];
     if (selectedImage) {
         self.flowerImageView.image = selectedImage;
-        // store image;
-        [picker dismissViewControllerAnimated:YES completion:NULL];
+        [picker dismissViewControllerAnimated:YES completion:^{
+            [self saveImage:selectedImage];
+        }];
     }
 }
 

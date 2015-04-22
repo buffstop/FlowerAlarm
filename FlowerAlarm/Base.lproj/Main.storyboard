@@ -136,7 +136,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQU-2r-Ebn" userLabel="flowerImage">
-                                <rect key="frame" x="16" y="20" width="568" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9k-Jr-omo" userLabel="speechBubble">
                                 <rect key="frame" x="251" y="203" width="240" height="128"/>
@@ -145,8 +146,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="H6U-BW-7Y9" firstAttribute="top" secondItem="oQU-2r-Ebn" secondAttribute="bottom" id="HyH-5U-ht4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oQU-2r-Ebn" secondAttribute="trailing" id="dFA-Y9-qP9"/>
-                            <constraint firstItem="oQU-2r-Ebn" firstAttribute="leading" secondItem="VV7-8u-0ZU" secondAttribute="leadingMargin" id="pDq-JW-B7W"/>
+                            <constraint firstAttribute="trailing" secondItem="oQU-2r-Ebn" secondAttribute="trailing" id="dFA-Y9-qP9"/>
+                            <constraint firstItem="oQU-2r-Ebn" firstAttribute="leading" secondItem="VV7-8u-0ZU" secondAttribute="leading" id="pDq-JW-B7W"/>
                             <constraint firstItem="oQU-2r-Ebn" firstAttribute="top" secondItem="anZ-ME-KSH" secondAttribute="bottom" id="zSU-i6-J9U"/>
                         </constraints>
                     </view>
