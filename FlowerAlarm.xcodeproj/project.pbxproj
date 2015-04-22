@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01D0BB551AE7D0AA00F461B2 /* DeviceSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BB541AE7D0AA00F461B2 /* DeviceSelectionViewController.m */; };
+		01D0BB581AE7D2B600F461B2 /* DevicesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BB571AE7D2B600F461B2 /* DevicesController.m */; };
+		01D0BB5B1AE7E17200F461B2 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BB5A1AE7E17200F461B2 /* Device.m */; };
+		01D0BB5F1AE7E64600F461B2 /* BlukiiKit.framework in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = 49C98D791AE7B751001EB664 /* BlukiiKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		01D0BB621AE7EFCF00F461B2 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BB611AE7EFCF00F461B2 /* BoardViewController.m */; };
 		49C98D531AE7B69C001EB664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D521AE7B69C001EB664 /* main.m */; };
 		49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D551AE7B69C001EB664 /* AppDelegate.m */; };
 		49C98D591AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D571AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld */; };
@@ -27,7 +32,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		01D0BB5E1AE7E62B00F461B2 /* Copy Files (1 item) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				01D0BB5F1AE7E64600F461B2 /* BlukiiKit.framework in Copy Files (1 item) */,
+			);
+			name = "Copy Files (1 item)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		01D0BB531AE7D0AA00F461B2 /* DeviceSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSelectionViewController.h; sourceTree = "<group>"; };
+		01D0BB541AE7D0AA00F461B2 /* DeviceSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSelectionViewController.m; sourceTree = "<group>"; };
+		01D0BB561AE7D2B600F461B2 /* DevicesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicesController.h; sourceTree = "<group>"; };
+		01D0BB571AE7D2B600F461B2 /* DevicesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevicesController.m; sourceTree = "<group>"; };
+		01D0BB591AE7E17200F461B2 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		01D0BB5A1AE7E17200F461B2 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		01D0BB601AE7EFCF00F461B2 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
+		01D0BB611AE7EFCF00F461B2 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
 		49C98D4D1AE7B69C001EB664 /* FlowerAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C98D511AE7B69C001EB664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C98D521AE7B69C001EB664 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +118,14 @@
 				49C98D621AE7B69C001EB664 /* LaunchScreen.xib */,
 				49C98D571AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld */,
 				49C98D501AE7B69C001EB664 /* Supporting Files */,
+				01D0BB531AE7D0AA00F461B2 /* DeviceSelectionViewController.h */,
+				01D0BB541AE7D0AA00F461B2 /* DeviceSelectionViewController.m */,
+				01D0BB561AE7D2B600F461B2 /* DevicesController.h */,
+				01D0BB571AE7D2B600F461B2 /* DevicesController.m */,
+				01D0BB591AE7E17200F461B2 /* Device.h */,
+				01D0BB5A1AE7E17200F461B2 /* Device.m */,
+				01D0BB601AE7EFCF00F461B2 /* BoardViewController.h */,
+				01D0BB611AE7EFCF00F461B2 /* BoardViewController.m */,
 			);
 			path = FlowerAlarm;
 			sourceTree = "<group>";
@@ -139,6 +174,7 @@
 				49C98D491AE7B69C001EB664 /* Sources */,
 				49C98D4A1AE7B69C001EB664 /* Frameworks */,
 				49C98D4B1AE7B69C001EB664 /* Resources */,
+				01D0BB5E1AE7E62B00F461B2 /* Copy Files (1 item) */,
 			);
 			buildRules = (
 			);
@@ -229,9 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D0BB621AE7EFCF00F461B2 /* BoardViewController.m in Sources */,
 				49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */,
 				49C98D531AE7B69C001EB664 /* main.m in Sources */,
 				49C98D591AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld in Sources */,
+				01D0BB5B1AE7E17200F461B2 /* Device.m in Sources */,
+				01D0BB581AE7D2B600F461B2 /* DevicesController.m in Sources */,
+				01D0BB551AE7D0AA00F461B2 /* DeviceSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,11 +393,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FlowerAlarm",
 				);
 				INFOPLIST_FILE = FlowerAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -367,11 +409,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FlowerAlarm",
 				);
 				INFOPLIST_FILE = FlowerAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
