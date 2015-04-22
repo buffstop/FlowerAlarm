@@ -13,11 +13,15 @@
 
 @interface DevicesController ()<CBCentralManagerDelegate>
 @property(nonatomic, strong) Device* preferredDevice;
-@property(nonatomic, strong)CBCentralManager* centralManager;
+@property(nonatomic, strong) CBCentralManager* centralManager;
 @property(nonatomic, strong) NSMutableArray* devices;
 @property(nonatomic, copy) void (^didRetrieveDevice)(Device* device);
 @property(nonatomic, assign, readwrite)BOOL bluetoothEnabled;
 @end
+
+NSString *const PreferredDeviceFoundNotification = @"PreferredDeviceFoundNotification";
+NSString *const PreferredDeviceFoundNotificationDeviceKey = @"preferredDevice";
+static NSString *const kPreferredDeviceId = @"preferredDeviceId";
 
 @implementation DevicesController
 
@@ -31,15 +35,26 @@
     return self;
 }
 
+- (void)restorePreferredDevice
+{
+    [self findDevices];
+}
+
 - (void)findDevicesWithCompletionBlock:(void (^)(Device* device))completionBlock
 {
     self.didRetrieveDevice = completionBlock;
     [self findDevices];
 }
 
++ (NSString*)preferredDeviceId
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kPreferredDeviceId];
+}
+
 - (void)setPreferredDevice:(Device*)device
 {
-    // save Device
+    [[NSUserDefaults standardUserDefaults] setObject:device.peripheral.identifier.UUIDString forKey:kPreferredDeviceId];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     _preferredDevice = device;
     [self connectDevice:device];
 }
@@ -78,7 +93,10 @@
         Device * device  = [[Device alloc] init];
         device.peripheral = peripheral;
         device.name = advertisementData[CBAdvertisementDataLocalNameKey];
-
+        if ([device.peripheral.identifier.UUIDString isEqualToString:self.class.preferredDeviceId]) {
+            [self setPreferredDevice:device];
+            [[NSNotificationCenter defaultCenter] postNotificationName:PreferredDeviceFoundNotification object:self userInfo:@{PreferredDeviceFoundNotificationDeviceKey: device}];
+        }
         if (self.didRetrieveDevice) {
             self.didRetrieveDevice(device);
         }

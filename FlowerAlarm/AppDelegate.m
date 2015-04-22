@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "BoardViewController.h"
+#import "DevicesController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -15,8 +18,19 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+
+    NSString* deviceId = [DevicesController preferredDeviceId];
+    if (deviceId) {
+        // already configured
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        BoardViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"board"];
+        DevicesController* devicesController = [DevicesController new];
+        rootViewController.devicesController = devicesController;
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+    }
     return YES;
 }
 

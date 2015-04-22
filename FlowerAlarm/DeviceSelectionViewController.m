@@ -40,12 +40,13 @@ static NSString *const kCellIdentifier = @"deviceCell";
 
 - (void)updateDevices
 {
+    __weak __typeof(&*self)weakSelf = self;
     self.tableView.hidden = !self.devicesController.bluetoothEnabled;
     if (!self.tableView.hidden) {
         [self.devices removeAllObjects];
         [self.devicesController findDevicesWithCompletionBlock:^(Device* device){
-            [self.devices addObject:device];
-            [self.tableView reloadData];
+            [weakSelf.devices addObject:device];
+            [weakSelf.tableView reloadData];
         }];
     }
 }
@@ -55,7 +56,7 @@ static NSString *const kCellIdentifier = @"deviceCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.devices.count;
-
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,11 +71,15 @@ static NSString *const kCellIdentifier = @"deviceCell";
 {
     Device* device = self.devices[indexPath.row];
     [self.devicesController setPreferredDevice:device];
-    [self performSegueWithIdentifier:@"showBoard" sender:self];
-
+    [self showBoard];
 }
 
 #pragma mark - Navigation
+
+- (void)showBoard
+{
+    [self performSegueWithIdentifier:@"showBoard" sender:self];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

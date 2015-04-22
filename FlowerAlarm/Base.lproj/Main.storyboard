@@ -126,7 +126,7 @@
         <!--Board-->
         <scene sceneID="bJd-g7-sbJ">
             <objects>
-                <viewController id="9B6-Qg-WaX" userLabel="Board" customClass="BoardViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="board" id="9B6-Qg-WaX" userLabel="Board" customClass="BoardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="anZ-ME-KSH"/>
                         <viewControllerLayoutGuide type="bottom" id="H6U-BW-7Y9"/>

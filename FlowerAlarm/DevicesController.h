@@ -10,9 +10,15 @@
 
 #import "Device.h"
 
+extern NSString *const PreferredDeviceFoundNotification;
+extern NSString *const PreferredDeviceFoundNotificationDeviceKey;
 @interface DevicesController : NSObject
 @property(nonatomic, assign, readonly)BOOL bluetoothEnabled;
 @property(nonatomic, copy) void (^bluetoothStateChanged)(BOOL enabled);
+
+- (void)restorePreferredDevice;
+
 - (void)setPreferredDevice:(Device*)device;
 - (void)findDevicesWithCompletionBlock:(void (^)(Device* device))completionBlock;
++ (NSString*)preferredDeviceId;
 @end

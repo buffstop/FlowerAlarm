@@ -17,9 +17,22 @@
 
 @implementation BoardViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    __weak __typeof(&*self)weakSelf = self;
+    [self.devicesController setBluetoothStateChanged:^(BOOL enabled) {
+        [weakSelf restoreDevice];
+    }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRetreivePreferredDevice:) name:PreferredDeviceFoundNotification object:nil];
+    [self restoreDevice];
+}
 
+- (void)restoreDevice
+{
+    if ([DevicesController preferredDeviceId]) {
+        [self.devicesController restorePreferredDevice];
+    };
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -28,6 +41,18 @@
     if (self.flowerImageView.image == nil) {
         [self performSegueWithIdentifier:@"selectFlower" sender:self];
     }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:PreferredDeviceFoundNotification object:nil];
+
+}
+#pragma mark -
+
+-(void)didRetreivePreferredDevice:(NSNotification*)notification
+{
+
 }
 
 #pragma mark - Navigation
