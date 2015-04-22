@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49C98D531AE7B69C001EB664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D521AE7B69C001EB664 /* main.m */; };
+		49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D551AE7B69C001EB664 /* AppDelegate.m */; };
+		49C98D591AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D571AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld */; };
+		49C98D5C1AE7B69C001EB664 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D5B1AE7B69C001EB664 /* ViewController.m */; };
+		49C98D5F1AE7B69C001EB664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C98D5D1AE7B69C001EB664 /* Main.storyboard */; };
+		49C98D611AE7B69C001EB664 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C98D601AE7B69C001EB664 /* Images.xcassets */; };
+		49C98D641AE7B69C001EB664 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C98D621AE7B69C001EB664 /* LaunchScreen.xib */; };
+		49C98D701AE7B69C001EB664 /* FlowerAlarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D6F1AE7B69C001EB664 /* FlowerAlarmTests.m */; };
+		49C98D7A1AE7B751001EB664 /* BlukiiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C98D791AE7B751001EB664 /* BlukiiKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49C98D6A1AE7B69C001EB664 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49C98D451AE7B69C001EB664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49C98D4C1AE7B69C001EB664;
+			remoteInfo = FlowerAlarm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49C98D4D1AE7B69C001EB664 /* FlowerAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C98D511AE7B69C001EB664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C98D521AE7B69C001EB664 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49C98D541AE7B69C001EB664 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49C98D551AE7B69C001EB664 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49C98D581AE7B69C001EB664 /* FlowerAlarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlowerAlarm.xcdatamodel; sourceTree = "<group>"; };
+		49C98D5A1AE7B69C001EB664 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		49C98D5B1AE7B69C001EB664 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		49C98D5E1AE7B69C001EB664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49C98D601AE7B69C001EB664 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		49C98D631AE7B69C001EB664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		49C98D691AE7B69C001EB664 /* FlowerAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowerAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C98D6E1AE7B69C001EB664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C98D6F1AE7B69C001EB664 /* FlowerAlarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlowerAlarmTests.m; sourceTree = "<group>"; };
+		49C98D791AE7B751001EB664 /* BlukiiKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BlukiiKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49C98D4A1AE7B69C001EB664 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C98D7A1AE7B751001EB664 /* BlukiiKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49C98D661AE7B69C001EB664 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49C98D441AE7B69C001EB664 = {
+			isa = PBXGroup;
+			children = (
+				49C98D4F1AE7B69C001EB664 /* FlowerAlarm */,
+				49C98D6C1AE7B69C001EB664 /* FlowerAlarmTests */,
+				49C98D4E1AE7B69C001EB664 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49C98D4E1AE7B69C001EB664 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49C98D4D1AE7B69C001EB664 /* FlowerAlarm.app */,
+				49C98D691AE7B69C001EB664 /* FlowerAlarmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49C98D4F1AE7B69C001EB664 /* FlowerAlarm */ = {
+			isa = PBXGroup;
+			children = (
+				49C98D7B1AE7B9C2001EB664 /* Libs */,
+				49C98D541AE7B69C001EB664 /* AppDelegate.h */,
+				49C98D551AE7B69C001EB664 /* AppDelegate.m */,
+				49C98D5A1AE7B69C001EB664 /* ViewController.h */,
+				49C98D5B1AE7B69C001EB664 /* ViewController.m */,
+				49C98D5D1AE7B69C001EB664 /* Main.storyboard */,
+				49C98D601AE7B69C001EB664 /* Images.xcassets */,
+				49C98D621AE7B69C001EB664 /* LaunchScreen.xib */,
+				49C98D571AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld */,
+				49C98D501AE7B69C001EB664 /* Supporting Files */,
+			);
+			path = FlowerAlarm;
+			sourceTree = "<group>";
+		};
+		49C98D501AE7B69C001EB664 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49C98D511AE7B69C001EB664 /* Info.plist */,
+				49C98D521AE7B69C001EB664 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49C98D6C1AE7B69C001EB664 /* FlowerAlarmTests */ = {
+			isa = PBXGroup;
+			children = (
+				49C98D6F1AE7B69C001EB664 /* FlowerAlarmTests.m */,
+				49C98D6D1AE7B69C001EB664 /* Supporting Files */,
+			);
+			path = FlowerAlarmTests;
+			sourceTree = "<group>";
+		};
+		49C98D6D1AE7B69C001EB664 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49C98D6E1AE7B69C001EB664 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49C98D7B1AE7B9C2001EB664 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				49C98D791AE7B751001EB664 /* BlukiiKit.framework */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49C98D4C1AE7B69C001EB664 /* FlowerAlarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49C98D731AE7B69C001EB664 /* Build configuration list for PBXNativeTarget "FlowerAlarm" */;
+			buildPhases = (
+				49C98D491AE7B69C001EB664 /* Sources */,
+				49C98D4A1AE7B69C001EB664 /* Frameworks */,
+				49C98D4B1AE7B69C001EB664 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowerAlarm;
+			productName = FlowerAlarm;
+			productReference = 49C98D4D1AE7B69C001EB664 /* FlowerAlarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49C98D681AE7B69C001EB664 /* FlowerAlarmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49C98D761AE7B69C001EB664 /* Build configuration list for PBXNativeTarget "FlowerAlarmTests" */;
+			buildPhases = (
+				49C98D651AE7B69C001EB664 /* Sources */,
+				49C98D661AE7B69C001EB664 /* Frameworks */,
+				49C98D671AE7B69C001EB664 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49C98D6B1AE7B69C001EB664 /* PBXTargetDependency */,
+			);
+			name = FlowerAlarmTests;
+			productName = FlowerAlarmTests;
+			productReference = 49C98D691AE7B69C001EB664 /* FlowerAlarmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49C98D451AE7B69C001EB664 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = CockieMonster;
+				TargetAttributes = {
+					49C98D4C1AE7B69C001EB664 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					49C98D681AE7B69C001EB664 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 49C98D4C1AE7B69C001EB664;
+					};
+				};
+			};
+			buildConfigurationList = 49C98D481AE7B69C001EB664 /* Build configuration list for PBXProject "FlowerAlarm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49C98D441AE7B69C001EB664;
+			productRefGroup = 49C98D4E1AE7B69C001EB664 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49C98D4C1AE7B69C001EB664 /* FlowerAlarm */,
+				49C98D681AE7B69C001EB664 /* FlowerAlarmTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49C98D4B1AE7B69C001EB664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C98D5F1AE7B69C001EB664 /* Main.storyboard in Resources */,
+				49C98D641AE7B69C001EB664 /* LaunchScreen.xib in Resources */,
+				49C98D611AE7B69C001EB664 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49C98D671AE7B69C001EB664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49C98D491AE7B69C001EB664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */,
+				49C98D531AE7B69C001EB664 /* main.m in Sources */,
+				49C98D5C1AE7B69C001EB664 /* ViewController.m in Sources */,
+				49C98D591AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49C98D651AE7B69C001EB664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C98D701AE7B69C001EB664 /* FlowerAlarmTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49C98D6B1AE7B69C001EB664 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49C98D4C1AE7B69C001EB664 /* FlowerAlarm */;
+			targetProxy = 49C98D6A1AE7B69C001EB664 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49C98D5D1AE7B69C001EB664 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49C98D5E1AE7B69C001EB664 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49C98D621AE7B69C001EB664 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49C98D631AE7B69C001EB664 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49C98D711AE7B69C001EB664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49C98D721AE7B69C001EB664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49C98D741AE7B69C001EB664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FlowerAlarm",
+				);
+				INFOPLIST_FILE = FlowerAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49C98D751AE7B69C001EB664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FlowerAlarm",
+				);
+				INFOPLIST_FILE = FlowerAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		49C98D771AE7B69C001EB664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FlowerAlarmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowerAlarm.app/FlowerAlarm";
+			};
+			name = Debug;
+		};
+		49C98D781AE7B69C001EB664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FlowerAlarmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowerAlarm.app/FlowerAlarm";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49C98D481AE7B69C001EB664 /* Build configuration list for PBXProject "FlowerAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49C98D711AE7B69C001EB664 /* Debug */,
+				49C98D721AE7B69C001EB664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49C98D731AE7B69C001EB664 /* Build configuration list for PBXNativeTarget "FlowerAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49C98D741AE7B69C001EB664 /* Debug */,
+				49C98D751AE7B69C001EB664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49C98D761AE7B69C001EB664 /* Build configuration list for PBXNativeTarget "FlowerAlarmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49C98D771AE7B69C001EB664 /* Debug */,
+				49C98D781AE7B69C001EB664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49C98D571AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49C98D581AE7B69C001EB664 /* FlowerAlarm.xcdatamodel */,
+			);
+			currentVersion = 49C98D581AE7B69C001EB664 /* FlowerAlarm.xcdatamodel */;
+			path = FlowerAlarm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 49C98D451AE7B69C001EB664 /* Project object */;
+}
