@@ -10,7 +10,6 @@
 		49C98D531AE7B69C001EB664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D521AE7B69C001EB664 /* main.m */; };
 		49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D551AE7B69C001EB664 /* AppDelegate.m */; };
 		49C98D591AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D571AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld */; };
-		49C98D5C1AE7B69C001EB664 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D5B1AE7B69C001EB664 /* ViewController.m */; };
 		49C98D5F1AE7B69C001EB664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C98D5D1AE7B69C001EB664 /* Main.storyboard */; };
 		49C98D611AE7B69C001EB664 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C98D601AE7B69C001EB664 /* Images.xcassets */; };
 		49C98D641AE7B69C001EB664 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C98D621AE7B69C001EB664 /* LaunchScreen.xib */; };
@@ -35,8 +34,6 @@
 		49C98D541AE7B69C001EB664 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49C98D551AE7B69C001EB664 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		49C98D581AE7B69C001EB664 /* FlowerAlarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlowerAlarm.xcdatamodel; sourceTree = "<group>"; };
-		49C98D5A1AE7B69C001EB664 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		49C98D5B1AE7B69C001EB664 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		49C98D5E1AE7B69C001EB664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49C98D601AE7B69C001EB664 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49C98D631AE7B69C001EB664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -89,8 +86,6 @@
 				49C98D7B1AE7B9C2001EB664 /* Libs */,
 				49C98D541AE7B69C001EB664 /* AppDelegate.h */,
 				49C98D551AE7B69C001EB664 /* AppDelegate.m */,
-				49C98D5A1AE7B69C001EB664 /* ViewController.h */,
-				49C98D5B1AE7B69C001EB664 /* ViewController.m */,
 				49C98D5D1AE7B69C001EB664 /* Main.storyboard */,
 				49C98D601AE7B69C001EB664 /* Images.xcassets */,
 				49C98D621AE7B69C001EB664 /* LaunchScreen.xib */,
@@ -236,7 +231,6 @@
 			files = (
 				49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */,
 				49C98D531AE7B69C001EB664 /* main.m in Sources */,
-				49C98D5C1AE7B69C001EB664 /* ViewController.m in Sources */,
 				49C98D591AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
