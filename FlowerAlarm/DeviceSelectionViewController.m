@@ -22,17 +22,32 @@ static NSString *const kCellIdentifier = @"deviceCell";
 
 @implementation DeviceSelectionViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.devices = [[NSMutableArray alloc] init];
+    __weak __typeof(&*self)weakSelf = self;
+    [self.devicesController setBluetoothStateChanged:^(BOOL enabled) {
+        [weakSelf updateDevices];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.devicesController findDevicesWithCompletionBlock:^(Device* device){
-        [self.devices addObject:device];
-        [self.tableView reloadData];
-    }];
+    [super viewWillAppear:animated];
+    [self updateDevices];
+}
+
+- (void)updateDevices
+{
+    self.tableView.hidden = !self.devicesController.bluetoothEnabled;
+    if (!self.tableView.hidden) {
+        [self.devices removeAllObjects];
+        [self.devicesController findDevicesWithCompletionBlock:^(Device* device){
+            [self.devices addObject:device];
+            [self.tableView reloadData];
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource

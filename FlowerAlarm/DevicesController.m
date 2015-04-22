@@ -16,6 +16,7 @@
 @property(nonatomic, strong)CBCentralManager* centralManager;
 @property(nonatomic, strong) NSMutableArray* devices;
 @property(nonatomic, copy) void (^didRetrieveDevice)(Device* device);
+@property(nonatomic, assign, readwrite)BOOL bluetoothEnabled;
 @end
 
 @implementation DevicesController
@@ -24,7 +25,7 @@
 {
     self = [super init];
     if (self) {
-        self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+        self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:@{CBCentralManagerOptionShowPowerAlertKey: @(NO)}];
         self.devices = [[NSMutableArray alloc] init];
     }
     return self;
@@ -56,11 +57,19 @@
     }
 }
 
+-(void)setBluetoothEnabled:(BOOL)bluetoothEnabled
+{
+    _bluetoothEnabled = bluetoothEnabled;
+    if (self.bluetoothStateChanged) {
+        self.bluetoothStateChanged(bluetoothEnabled);
+    }
+}
+
 #pragma mark - CBCentralManagerDelegate
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
-    [self findDevices];
+    self.bluetoothEnabled = ([central state] == CBCentralManagerStatePoweredOn);
 }
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI;

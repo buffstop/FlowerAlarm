@@ -11,6 +11,8 @@
 #import "Device.h"
 
 @interface DevicesController : NSObject
+@property(nonatomic, assign, readonly)BOOL bluetoothEnabled;
+@property(nonatomic, copy) void (^bluetoothStateChanged)(BOOL enabled);
 - (void)setPreferredDevice:(Device*)device;
 - (void)findDevicesWithCompletionBlock:(void (^)(Device* device))completionBlock;
 @end
