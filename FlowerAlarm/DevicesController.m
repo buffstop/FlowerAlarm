@@ -109,8 +109,33 @@ static NSString *const kPreferredDeviceId = @"preferredDeviceId";
     if ([self.preferredDevice.peripheral isEqual:peripheral]) {
         // device is Connected
         // TODO: register for services....
+        [self lightWithPeripheral:peripheral];
+
+
     }
 }
 
+- (void)lightWithPeripheral:(CBPeripheral*)peripheral
+{
+    BKBlukiiDescription* lightDescription = [BKLightProfileLoader evaluatePeripheral:peripheral];
+    BKLightProfileLoader* loader = [[BKLightProfileLoader alloc] init];
+    [loader loadProfileForBlukii:lightDescription completeWith:^(BKBlukiiDeviceContext * __nullable context, NSError * __nullable error) {
+        if(error == nil) {
+            // Profile loaded successfully
+            [context.light subscribeToEventStateCharacteristic:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
+                
+            } callOnNotify:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
+                
+            }];
+//            [context.light subscribeToEnabler:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
+//                
+//            } callOnNotify:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
+//                
+//            }];
+        } else {
+            // Error while loading profile
+        }
+    }];
+}
 
 @end
