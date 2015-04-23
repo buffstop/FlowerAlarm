@@ -25,6 +25,7 @@ static NSString *const kCellIdentifier = @"deviceCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.devices = [[NSMutableArray alloc] init];
     __weak __typeof(&*self)weakSelf = self;
     [self.devicesController setBluetoothStateChanged:^(BOOL enabled) {

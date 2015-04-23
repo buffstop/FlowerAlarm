@@ -128,7 +128,7 @@ static NSString *const kPreferredDeviceId = @"preferredDeviceId";
         }];
 
         [self.peripheralReader humidity:^(NSNumber * __nonnull number) {
-            NSLog(@"new temp:%i", number.unsignedCharValue);
+            NSLog(@"new humidity:%i", number.unsignedCharValue);
             weakSelf.humidity = number.unsignedCharValue;
             [weakSelf updateStatus];
         }];
@@ -143,6 +143,12 @@ static NSString *const kPreferredDeviceId = @"preferredDeviceId";
     if (self.temperature > 20) {
         message = @"Am I in Dubai or what? I need to cool down!";
     }
+    if (self.humidity > 90) {
+        message = @"It's really wet over here! ";
+    }
+//     message = @"It's really wet over here! ";
+//    message = @"I am scared in the dark! ";
+
     if (self.delegate) {
         [self.delegate statusDidChange:message];
     }
