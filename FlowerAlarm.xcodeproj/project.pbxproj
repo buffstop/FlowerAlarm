@@ -12,6 +12,7 @@
 		01D0BB5B1AE7E17200F461B2 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BB5A1AE7E17200F461B2 /* Device.m */; };
 		01D0BB5F1AE7E64600F461B2 /* BlukiiKit.framework in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = 49C98D791AE7B751001EB664 /* BlukiiKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01D0BB621AE7EFCF00F461B2 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BB611AE7EFCF00F461B2 /* BoardViewController.m */; };
+		01D0BB671AE8E64700F461B2 /* PeripheralReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BB661AE8E64700F461B2 /* PeripheralReader.swift */; };
 		49C98D531AE7B69C001EB664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D521AE7B69C001EB664 /* main.m */; };
 		49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D551AE7B69C001EB664 /* AppDelegate.m */; };
 		49C98D591AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49C98D571AE7B69C001EB664 /* FlowerAlarm.xcdatamodeld */; };
@@ -55,6 +56,8 @@
 		01D0BB5A1AE7E17200F461B2 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		01D0BB601AE7EFCF00F461B2 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
 		01D0BB611AE7EFCF00F461B2 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
+		01D0BB651AE8E64700F461B2 /* FlowerAlarm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlowerAlarm-Bridging-Header.h"; sourceTree = "<group>"; };
+		01D0BB661AE8E64700F461B2 /* PeripheralReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralReader.swift; sourceTree = "<group>"; };
 		49C98D4D1AE7B69C001EB664 /* FlowerAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C98D511AE7B69C001EB664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C98D521AE7B69C001EB664 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				01D0BB5A1AE7E17200F461B2 /* Device.m */,
 				01D0BB601AE7EFCF00F461B2 /* BoardViewController.h */,
 				01D0BB611AE7EFCF00F461B2 /* BoardViewController.m */,
+				01D0BB661AE8E64700F461B2 /* PeripheralReader.swift */,
+				01D0BB651AE8E64700F461B2 /* FlowerAlarm-Bridging-Header.h */,
 			);
 			path = FlowerAlarm;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D0BB671AE8E64700F461B2 /* PeripheralReader.swift in Sources */,
 				01D0BB621AE7EFCF00F461B2 /* BoardViewController.m in Sources */,
 				49C98D561AE7B69C001EB664 /* AppDelegate.m in Sources */,
 				49C98D531AE7B69C001EB664 /* main.m in Sources */,
@@ -393,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,6 +409,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlowerAlarm/FlowerAlarm-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -409,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -418,6 +428,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlowerAlarm/FlowerAlarm-Bridging-Header.h";
 			};
 			name = Release;
 		};

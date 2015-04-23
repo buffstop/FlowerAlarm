@@ -10,6 +10,7 @@
 
 @import CoreBluetooth;
 @import BlukiiKit;
+#import "FlowerAlarm-Swift.h"
 
 @interface DevicesController ()<CBCentralManagerDelegate>
 @property(nonatomic, strong) Device* preferredDevice;
@@ -19,6 +20,11 @@
 @property(nonatomic, assign, readwrite)BOOL bluetoothEnabled;
 
 @property(nonatomic, strong)BKBlukiiDeviceContext* deviceContext;
+
+@property(nonatomic, strong)PeripheralReader* peripheralReader;
+
+@property(nonatomic, assign)CGFloat temperature;
+@property(nonatomic, assign)NSUInteger humidity;
 @end
 
 NSString *const PreferredDeviceFoundNotification = @"PreferredDeviceFoundNotification";
@@ -111,53 +117,34 @@ static NSString *const kPreferredDeviceId = @"preferredDeviceId";
     if ([self.preferredDevice.peripheral isEqual:peripheral]) {
         // device is Connected
         // TODO: register for services....
-//        [self lightWithPeripheral:peripheral];
-        [self humidityWithPeripheral:peripheral];
+        if (!self.peripheralReader) {
+            self.peripheralReader = [[PeripheralReader alloc] initWithPeripheral:peripheral];
+        }
+        __weak __typeof(&*self)weakSelf = self;
+        [self.peripheralReader temperature:^(NSNumber * __nonnull number) {
+            NSLog(@"new temp:%f", number.doubleValue);
+            weakSelf.temperature = number.doubleValue;
+            [weakSelf updateStatus];
+        }];
+
+        [self.peripheralReader humidity:^(NSNumber * __nonnull number) {
+            NSLog(@"new temp:%i", number.unsignedCharValue);
+            weakSelf.humidity = number.unsignedCharValue;
+            [weakSelf updateStatus];
+        }];
+
     }
 }
 
-- (void)lightWithPeripheral:(CBPeripheral*)peripheral
+
+- (void)updateStatus
 {
-    BKBlukiiDescription* lightDescription = [BKLightProfileLoader evaluatePeripheral:peripheral];
-    BKLightProfileLoader* loader = [[BKLightProfileLoader alloc] init];
-    [loader loadProfileForBlukii:lightDescription completeWith:^(BKBlukiiDeviceContext * __nullable context, NSError * __nullable error) {
-        if(error == nil) {
-            // Profile loaded successfully
-            [context.light updateValue:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
-                
-            }];
-//            [context.light subscribeToEnabler:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
-//                
-//            } callOnNotify:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
-//                
-//            }];
-        } else {
-            // Error while loading profile
-        }
-    }];
+    NSString* message = @"Hey, something is going on!";
+    if (self.temperature > 20) {
+        message = @"Am I in Dubai or what? I need to cool down!";
+    }
+    if (self.delegate) {
+        [self.delegate statusDidChange:message];
+    }
 }
-
-- (void)humidityWithPeripheral:(CBPeripheral*)peripheral
-{
-    BKBatteryServiceProfileLoader* description = [BKBatteryServiceProfileLoader evaluatePeripheral:peripheral];
-    BKHumidityProfileLoader* loader = [[BKHumidityProfileLoader alloc] init];
-    [loader loadProfileForBlukii:description completeWith:^(BKBlukiiDeviceContext * __nullable context, NSError * __nullable error) {
-        if(error == nil) {
-            // Profile loaded successfully
-            self.deviceContext = context;
-
-            [context.humidity updateValue:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable hError) {
-                context.temperature.value
-            }];
-            //            [context.light subscribeToEnabler:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
-            //
-            //            } callOnNotify:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
-            //
-            //            }];
-        } else {
-            // Error while loading profile
-        }
-    }];
-}
-
 @end

@@ -10,9 +10,10 @@
 
 NSString *const kImageFilename = @"myFlower.png";
 
-@interface BoardViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface BoardViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate, DeviceInfosDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *flowerImageView;
 @property (nonatomic, strong)UIImage* storedImage;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -23,6 +24,7 @@ NSString *const kImageFilename = @"myFlower.png";
     [super viewDidLoad];
     self.setupImage = YES;
     __weak __typeof(&*self)weakSelf = self;
+    self.devicesController.delegate = self;
     [self.devicesController setBluetoothStateChanged:^(BOOL enabled) {
         [weakSelf restoreDevice];
     }];
@@ -115,4 +117,10 @@ NSString *const kImageFilename = @"myFlower.png";
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
+#pragma mark - DeviceInfosDelegate
+
+- (void)statusDidChange:(NSString*)message
+{
+    self.statusLabel.text = message;
+}
 @end

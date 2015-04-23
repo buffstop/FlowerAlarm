@@ -9,10 +9,16 @@
 #import <Foundation/Foundation.h>
 
 #import "Device.h"
+@protocol DeviceInfosDelegate
+
+- (void)statusDidChange:(NSString*)message;
+@end
 
 extern NSString *const PreferredDeviceFoundNotification;
+
 extern NSString *const PreferredDeviceFoundNotificationDeviceKey;
 @interface DevicesController : NSObject
+@property(nonatomic, weak)id<DeviceInfosDelegate> delegate;
 @property(nonatomic, assign, readonly)BOOL bluetoothEnabled;
 @property(nonatomic, copy) void (^bluetoothStateChanged)(BOOL enabled);
 
