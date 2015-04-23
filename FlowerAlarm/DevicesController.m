@@ -17,6 +17,8 @@
 @property(nonatomic, strong) NSMutableArray* devices;
 @property(nonatomic, copy) void (^didRetrieveDevice)(Device* device);
 @property(nonatomic, assign, readwrite)BOOL bluetoothEnabled;
+
+@property(nonatomic, strong)BKBlukiiDeviceContext* deviceContext;
 @end
 
 NSString *const PreferredDeviceFoundNotification = @"PreferredDeviceFoundNotification";
@@ -109,9 +111,8 @@ static NSString *const kPreferredDeviceId = @"preferredDeviceId";
     if ([self.preferredDevice.peripheral isEqual:peripheral]) {
         // device is Connected
         // TODO: register for services....
-        [self lightWithPeripheral:peripheral];
-
-
+//        [self lightWithPeripheral:peripheral];
+        [self humidityWithPeripheral:peripheral];
     }
 }
 
@@ -122,9 +123,7 @@ static NSString *const kPreferredDeviceId = @"preferredDeviceId";
     [loader loadProfileForBlukii:lightDescription completeWith:^(BKBlukiiDeviceContext * __nullable context, NSError * __nullable error) {
         if(error == nil) {
             // Profile loaded successfully
-            [context.light subscribeToEventStateCharacteristic:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
-                
-            } callOnNotify:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
+            [context.light updateValue:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
                 
             }];
 //            [context.light subscribeToEnabler:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
@@ -132,6 +131,29 @@ static NSString *const kPreferredDeviceId = @"preferredDeviceId";
 //            } callOnNotify:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
 //                
 //            }];
+        } else {
+            // Error while loading profile
+        }
+    }];
+}
+
+- (void)humidityWithPeripheral:(CBPeripheral*)peripheral
+{
+    BKBatteryServiceProfileLoader* description = [BKBatteryServiceProfileLoader evaluatePeripheral:peripheral];
+    BKHumidityProfileLoader* loader = [[BKHumidityProfileLoader alloc] init];
+    [loader loadProfileForBlukii:description completeWith:^(BKBlukiiDeviceContext * __nullable context, NSError * __nullable error) {
+        if(error == nil) {
+            // Profile loaded successfully
+            self.deviceContext = context;
+
+            [context.humidity updateValue:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable hError) {
+                context.temperature.value
+            }];
+            //            [context.light subscribeToEnabler:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
+            //
+            //            } callOnNotify:^(CBCharacteristic * __nonnull characteristic, NSError * __nullable error) {
+            //
+            //            }];
         } else {
             // Error while loading profile
         }
